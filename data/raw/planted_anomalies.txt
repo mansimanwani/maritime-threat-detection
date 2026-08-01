@@ -1,0 +1,4 @@
+200000037,ais_gap
+200000038,rendezvous
+200000039,rendezvous
+200000040,erratic

@@ -1,0 +1,121 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #1c2733;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 390px 1fr;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+}
+
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.6rem 1.1rem;
+  background: #16283c;
+  color: #eef3f8;
+}
+
+.header h1 { font-size: 1.02rem; font-weight: 600; margin: 0; }
+.header .muted { color: #a9bcce; }
+.message { font-size: 0.82rem; color: #ffd98a; }
+
+.muted { color: #6b7c8d; font-size: 0.85rem; }
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+  border-right: 1px solid #dbe2e9;
+}
+
+.list { flex: 1 1 auto; overflow-y: auto; }
+
+.map { width: 100%; height: 100%; }
+
+.anomaly-list { list-style: none; margin: 0; padding: 0; }
+
+.anomaly-item {
+  padding: 0.55rem 0.85rem;
+  border-bottom: 1px solid #eef1f4;
+  cursor: pointer;
+}
+
+.anomaly-item:hover { background: #f7f9fb; }
+.anomaly-item.selected { background: #e8f0f8; border-left: 3px solid #16283c; }
+
+.anomaly-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+}
+
+.rank { color: #9aa8b5; width: 2.1rem; }
+.mmsi { font-weight: 600; }
+.score { margin-left: auto; font-variant-numeric: tabular-nums; color: #c0392b; }
+
+.badge {
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 3px;
+  font-size: 0.72rem;
+}
+
+.badge.confirmed { background: #fbe4e2; color: #92271e; }
+.badge.dismissed { background: #eceff1; color: #5b6b79; }
+
+.explain {
+  flex: 0 0 auto;
+  max-height: 52%;
+  overflow-y: auto;
+  border-top: 1px solid #dbe2e9;
+  padding: 0.75rem 0.85rem;
+}
+
+.explain h3 { margin: 0 0 0.4rem; font-size: 0.95rem; }
+.reason { font-size: 0.88rem; line-height: 1.45; margin: 0 0 0.7rem; }
+
+.drivers { margin-bottom: 0.7rem; }
+
+.driver {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  margin-bottom: 0.22rem;
+}
+
+.driver-name { width: 7.6rem; color: #5b6b79; }
+.driver-track { flex: 1; height: 7px; background: #eceff1; border-radius: 4px; overflow: hidden; }
+.driver-fill { display: block; height: 100%; background: #2c6fb5; }
+.driver-pct { width: 2.2rem; text-align: right; font-variant-numeric: tabular-nums; }
+
+.actions { display: flex; gap: 0.5rem; }
+
+button {
+  font: inherit;
+  font-size: 0.85rem;
+  padding: 0.32rem 0.7rem;
+  border: 1px solid #c3ccd6;
+  border-radius: 4px;
+  background: #fff;
+  color: #1c2733;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) { border-color: #16283c; }
+button:disabled { opacity: 0.5; cursor: default; }
